@@ -5,7 +5,7 @@ Welcome! This is a Python-based program that I wrote using PyCharm. Please run i
 
 This is a program that automatically retrieves video information (Likes, Comments, and more) from Bilibili, one of the largest video platforms in China. I once considered extending the program to support videos from YouTube and TikTok, but I gave up because I couldn’t find valid APIs for them. Therefore, for now, this program can only analyze URLs from Bilibili.
 
-Although BiliBili is a Chinese website, it also has an English version. You can browse it using your browser’s machine translation feature, and there are plenty of English videos available on the platform as well.
+Although BiliBili is a Chinese website, it also has an English version. Or you can try your browser’s machine translation, and there are plenty of English videos available on the platform as well.
 
 
 HOW TO USE：
