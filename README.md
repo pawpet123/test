@@ -1,4 +1,4 @@
-# test
+# readme
 BEFORE YOU START:
 
 Welcome! This is a Python-based program that I wrote using PyCharm. Please run it in PyCharm, because I’m not sure whether it will work properly in other IDEs.
