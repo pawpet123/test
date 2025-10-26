@@ -1,0 +1,35 @@
+import requests #Requests is necessary in this code to access the server
+
+urls = input("Please enter Bilibili video URLs (separated by commas): ").split(",")
+
+for url in urls:
+    if "/video/" in url:
+        bvid = url.split("/video/")[1].split("?")[0].rstrip("/")    # To get bvid
+
+    else:
+        print("❌ Invalid URL:", url)
+        continue
+
+    if len(bvid) != 12:
+        print("❌ Invalid BV:", bvid)
+        continue
+
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36',
+        'Referer': 'https://www.bilibili.com/',
+    } 
+
+    api_url = f"https://api.bilibili.com/x/web-interface/view?bvid={bvid}"
+
+    response = requests.get(api_url, headers=headers)
+    if response.status_code != 200:
+        print(f"❌ Failed to get info for {bvid}")
+
+    data = response.json()["data"]
+
+    print("====== Video Info ======")
+    print("Title:", data["title"])
+    print("Uploader:", data["owner"]["name"])
+    print("Views:", data["stat"]["view"])
+    print("Likes:", data["stat"]["like"])
+    print("Comments:", data["stat"]["reply"])
